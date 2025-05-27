@@ -41,6 +41,7 @@
       display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;justify-content:center;
       background:#fff;border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);
       max-width:950px;
+      z-index: 1000;
     }
     #controls::after{
       content:"";position:absolute;bottom:-18px;left:50px;width:0;height:0;
