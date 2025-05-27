@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 26, 2025 at 01:38 PM
+-- Generation Time: May 27, 2025 at 10:11 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -474,6 +474,7 @@ CREATE TABLE `profil` (
   `Mail` varchar(64) NOT NULL,
   `Mdp` varchar(15) NOT NULL,
   `Admin` int(3) NOT NULL DEFAULT '0',
+  `Id_avatar` int(11) NOT NULL DEFAULT '0',
   `Ami1` int(5) DEFAULT NULL,
   `Ami2` int(5) DEFAULT NULL,
   `Ami3` int(5) DEFAULT NULL,
@@ -494,21 +495,21 @@ CREATE TABLE `profil` (
 -- Dumping data for table `profil`
 --
 
-INSERT INTO `profil` (`Id`, `Pseudo`, `Mail`, `Mdp`, `Admin`, `Ami1`, `Ami2`, `Ami3`, `Ami4`, `Ami5`, `Ami6`, `Ami7`, `Ami8`, `Ami9`, `Ami10`, `Tribu`, `Force`, `Compagnon`, `Phrase`) VALUES
-(1, 'Bart', 'corentin.bondeau@gmail.com', 'Bart', 0, 13, 10, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(2, 'aaa', 'Angus@student.junia.com', 'aaa', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(3, 'aaz', 'Angus@student.junia.com', 'aaa', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(4, 'Alice01', 'alice01@example.com', 'mdpAlice', 2, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, '?', '?', '?', '?'),
-(5, 'Bob02', 'bob02@example.com', 'mdpBob', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(6, 'Charlie03', 'charlie03@example.com', 'mdpCharlie', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(7, 'Diane04', 'diane04@example.com', 'mdpDiane', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(8, 'Eric05', 'eric05@example.com', 'mdpEric', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(9, 'Fiona06', 'fiona06@example.com', 'mdpFiona', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(10, 'Greg07', 'greg07@example.com', 'mdpGreg', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(11, 'Hana08', 'hana08@example.com', 'mdpHana', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(12, 'Ian09', 'ian09@example.com', 'mdpIan', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(13, 'Julia10', 'julia10@example.com', 'mdpJulia', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
-(14, 'Admin', 'Admin@admin.com', 'admin', 2, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Les Germains', 'Force surhumaine', 'Assurancetourix', 'La potion magique, c’est sacré !');
+INSERT INTO `profil` (`Id`, `Pseudo`, `Mail`, `Mdp`, `Admin`, `Id_avatar`, `Ami1`, `Ami2`, `Ami3`, `Ami4`, `Ami5`, `Ami6`, `Ami7`, `Ami8`, `Ami9`, `Ami10`, `Tribu`, `Force`, `Compagnon`, `Phrase`) VALUES
+(1, 'Bart', 'corentin.bondeau@gmail.com', 'Bart', 0, 7, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Les Helvètes', 'Courage exceptionnel', 'Assurancetourix', 'Tu vas voir ce que tu vas voir !'),
+(2, 'aaa', 'Angus@student.junia.com', 'aaa', 2, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(3, 'aaz', 'Angus@student.junia.com', 'aaa', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(4, 'Alice01', 'alice01@example.com', 'mdpAlice', 2, 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, '?', '?', '?', '?'),
+(5, 'Bob02', 'bob02@example.com', 'mdpBob', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(6, 'Charlie03', 'charlie03@example.com', 'mdpCharlie', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(7, 'Diane04', 'diane04@example.com', 'mdpDiane', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(8, 'Eric05', 'eric05@example.com', 'mdpEric', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(9, 'Fiona06', 'fiona06@example.com', 'mdpFiona', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(10, 'Greg07', 'greg07@example.com', 'mdpGreg', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(11, 'Hana08', 'hana08@example.com', 'mdpHana', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(12, 'Ian09', 'ian09@example.com', 'mdpIan', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(13, 'Julia10', 'julia10@example.com', 'mdpJulia', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '?', '?', '?', '?'),
+(14, 'Admin', 'Admin@admin.com', 'admin', 2, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Les Germains', 'Force surhumaine', 'Assurancetourix', 'La potion magique, c’est sacré !');
 
 --
 -- Indexes for dumped tables
