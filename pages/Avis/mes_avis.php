@@ -35,28 +35,56 @@ if (isset($_GET['supprimer']) && is_numeric($_GET['supprimer'])) {
 
 // Récupération des avis
 $idUser = $_SESSION['Id'];
+$stmtAmis = $conn->prepare("SELECT Ami1, Ami2, Ami3, Ami4, Ami5, Ami6, Ami7, Ami8, Ami9, Ami10 FROM profil WHERE Id = ?");
+$stmtAmis->execute([$idUser]);
+$amis = $stmtAmis->fetch(PDO::FETCH_ASSOC);
+$idsAmis = array_filter($amis); // supprime les NULL
+
 
 // Recherche et tri pour avis communauté
 $search = $_GET['search'] ?? '';
 $sort = $_GET['sort'] ?? '';
 
-$baseQuery = "SELECT avis.*, profil.Pseudo, bar.avis AS moyenne_bar
-FROM avis 
-JOIN profil ON avis.Id_profil = profil.Id
-JOIN bar ON avis.Nom_bar = bar.Nom
-WHERE avis.Nom_bar LIKE :search";
+if ($sort === 'amis') {
+    if (!empty($idsAmis)) {
+        $placeholders = implode(',', array_fill(0, count($idsAmis), '?'));
 
-if ($sort === 'note') {
-    $baseQuery .= " ORDER BY note DESC";
-} elseif ($sort === 'date') {
-    $baseQuery .= " ORDER BY Date_avis DESC";
+        $baseQuery = "SELECT avis.*, profil.Pseudo, bar.avis AS moyenne_bar
+                      FROM avis
+                      JOIN profil ON avis.Id_profil = profil.Id
+                      JOIN bar ON avis.Nom_bar = bar.Nom
+                      WHERE avis.Id_profil IN ($placeholders)
+                      AND avis.Nom_bar LIKE ?";
+
+        $stmtComm = $conn->prepare($baseQuery);
+        $params = array_values($idsAmis);
+        $params[] = '%' . $search . '%';
+        $stmtComm->execute($params);
+        $avisCommunaute = $stmtComm->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $avisCommunaute = []; // Aucun ami → aucun avis
+    }
+} else {
+    $baseQuery = "SELECT avis.*, profil.Pseudo, bar.avis AS moyenne_bar
+                  FROM avis 
+                  JOIN profil ON avis.Id_profil = profil.Id
+                  JOIN bar ON avis.Nom_bar = bar.Nom
+                  WHERE avis.Nom_bar LIKE :search";
+
+    if ($sort === 'note') {
+        $baseQuery .= " ORDER BY note DESC";
+    } elseif ($sort === 'date') {
+        $baseQuery .= " ORDER BY Date_avis DESC";
+    }
+
+    $stmtComm = $conn->prepare($baseQuery);
+    $searchParam = '%' . $search . '%';
+    $stmtComm->bindParam(':search', $searchParam);
+    $stmtComm->execute();
+    $avisCommunaute = $stmtComm->fetchAll(PDO::FETCH_ASSOC);
 }
 
-$stmtComm = $conn->prepare($baseQuery);
-$searchParam = '%' . $search . '%';
-$stmtComm->bindParam(':search', $searchParam);
-$stmtComm->execute();
-$avisCommunaute = $stmtComm->fetchAll(PDO::FETCH_ASSOC);
+
 
 // Tri des avis personnels
 $sortMes = $_GET['sort-mes'] ?? '';
@@ -96,6 +124,8 @@ $mesAvis = $stmtPerso->fetchAll(PDO::FETCH_ASSOC);
                 <option value="">-- Trier comme Panoramix --</option>
                 <option value="note" <?= $sort === 'note' ? 'selected' : '' ?>>Par potion magique (note)</option>
                 <option value="date" <?= $sort === 'date' ? 'selected' : '' ?>>Par fresque du druide (date)</option>
+                <option value="amis" <?= $sort === 'amis' ? 'selected' : '' ?>>Par mes amis gaulois</option>
+
             </select>
             <button class="add-button"  type="submit">Chercher</button>
         </form>
