@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chasse au Sanglier 🐗</title>
+  <?php include 'header.php'; ?>
   <style>
     * {
       box-sizing: border-box;

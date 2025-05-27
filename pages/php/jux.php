@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Machine à sous Astérix</title>
+  <?php include 'header.php'; ?>
   <style>
     body {
       font-family: Arial, sans-serif;
