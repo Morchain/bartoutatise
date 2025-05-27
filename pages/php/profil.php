@@ -40,9 +40,25 @@ if (isset($_POST['save_profile'])) {
     <header>
       <h1>⚔️ Profil de Gaulois : <?php echo htmlspecialchars($_SESSION['Pseudo']); ?></h1>
     </header>
+    <?php
+    require("../Amis/connexion.php");
+    try {
+                $vId = $_SESSION['Id'];
+                $reqPrep = "SELECT * FROM profil WHERE Id = :id";
+                $req = $conn->prepare($reqPrep);
+                $req->bindParam(':id', $vId);
+                $req->execute();
+                $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    }
+    catch (Exception $e) {
+                die("Erreur : " . $e->getMessage());
+    } finally {
+                $conn = null; // Fermer la connexion à la base de données
+    }
+    ?>
 
     <section class="profil">
-      <img src="avatar.png" alt="avatar" class="portrait" />
+      <img src='../../img/pp<?php echo $resultat["Id_avatar"]; ?>.jpg' alt='Profile Image' class='portrait'>
 
       <!-- Affichage classique -->
       <div id="affichage-profil">
@@ -58,6 +74,40 @@ if (isset($_POST['save_profile'])) {
 
       <!-- Formulaire caché -->
       <form id="formulaire-modif" method="post" action="form.php">
+        <h2>Modifier ton profil</h2>
+        <label>Choisis ta photo :</label><br />
+        <div class="photo-select">
+          <?php
+          $photos = [
+            "pp0.jpg",
+            "pp1.jpg",
+            "pp2.jpg",
+            "pp3.jpg",
+            "pp4.jpg",
+            "pp5.jpg",
+            "pp6.jpg",
+            "pp7.jpg",
+            "pp8.jpg",
+          ];
+
+          $currentPhoto = $_SESSION['photo'] ?? $photos[0];
+
+          foreach ($photos as $photo) {
+            $checked = ($currentPhoto === $photo) ? 'checked' : '';
+            echo '<label style="cursor:pointer; display:inline-block; margin:5px; border: 2px solid transparent; border-radius: 8px;">';
+            echo '<input type="radio" name="photo" value="' . htmlspecialchars($photo) . '" ' . $checked . ' style="display:none;" />';
+            echo '<img src="../../img/' . htmlspecialchars($photo) . '" alt="' . htmlspecialchars($photo) . '" style="width:80px; height:80px; object-fit:cover; border-radius:8px;" />';
+            echo '</label>';
+          }
+          ?>
+        </div>
+
+        <style>
+          .photo-select input[type="radio"]:checked + img {
+            border: 3px solid #d35400;
+          }
+        </style><br /><br />
+
         <label for="tribu">Choisis ta tribu :</label><br />
         <select name="tribu" id="tribu" required>
           <?php

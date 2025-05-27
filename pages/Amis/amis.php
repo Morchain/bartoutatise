@@ -4,6 +4,15 @@
         <title>Amix</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../css/amis.css">
+        <style>
+            .portrait {
+                width: 100px;
+                height: auto;
+                border: 5px solid #0074b7;
+                border-radius: 15px;
+                background: #fff;
+            }
+        </style>
     </head>
     <body>
 
@@ -79,6 +88,7 @@
                         }
 
                         echo "<div class='card-ami'>";
+                        echo "<img src='../../img/pp" . htmlspecialchars($ami['Id_avatar']) . ".jpg' alt='Photo de profil' class='portrait'>";
                         echo "<h3>" . htmlspecialchars($ami['Pseudo']) . "</h3>";
                         echo "<p>ID : " . htmlspecialchars($ami['Id']) . "</p>";
                         echo "<p>Email : " . htmlspecialchars($ami['Mail']) . "</p>";

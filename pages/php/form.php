@@ -97,9 +97,17 @@
       $_SESSION['force'] = $_POST['force'];
       $_SESSION['compagnon'] = $_POST['compagnon'];
       $_SESSION['phrase'] = $_POST['phrase'];
+      $photo = $_POST['photo'] ?? '';
+    if (preg_match('/pp(\d+)\.jpg/', $photo, $matches)) {
+        $id_photo = $matches[1];  // juste le chiffre
+    } else {
+        $id_photo = 0; // par exemple, valeur par défaut
+    }
+    $_SESSION['id_photo'] = $id_photo; // et le chiffre séparé
+
       // On revient à l'affichage classique après enregistrement
-      $stmt = $conn->prepare("UPDATE profil SET Tribu = ?, `Force` = ?, Compagnon = ?, Phrase = ? WHERE Id = ?");
-      $stmt->execute([$_SESSION['tribu'], $_SESSION['force'], $_SESSION['compagnon'], $_SESSION['phrase'], $_SESSION['Id']]);
+      $stmt = $conn->prepare("UPDATE profil SET Id_avatar = ?, Tribu = ?, `Force` = ?, Compagnon = ?, Phrase = ? WHERE Id = ?");
+      $stmt->execute([$_SESSION['id_photo'], $_SESSION['tribu'], $_SESSION['force'], $_SESSION['compagnon'], $_SESSION['phrase'], $_SESSION['Id']]);
       // Redirection pour éviter la resoumission du formulaire
       header('Location: profil.php');
       

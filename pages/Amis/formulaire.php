@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else if ($resultat == false) {
             echo "<h2>L'utilisateur n'existe pas</h2>";
         } else {
+            echo "<img src='../../img/pp" . htmlspecialchars($resultat['Id_avatar']) . ".jpg' alt='Photo de profil' class='portrait'>";
             echo "<h2>Pseudo : " . $resultat['Pseudo'] . "</h2>";
             echo "<p>ID : " . $resultat['Id'] . "</p>";
             for ($index = 1; $index < 11; $index++) {
@@ -227,4 +228,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     input[type="button"]:active {
         background-color: #7a6d33;
     }
+    .portrait {
+    width: 200px;
+    height: auto;
+    border: 5px solid #0074b7;
+    border-radius: 15px;
+    background: #fff;
+
+    display: block;
+    margin: 0 auto; /* ← centre horizontalement */
+}
+
 </style>
