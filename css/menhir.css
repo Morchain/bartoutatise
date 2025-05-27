@@ -1,39 +1,94 @@
 #conteneur0{
 	display: flex;
-	border-style:solid;
 	padding: 1%;
 	width: 95%;
-	height: 95%;
+	height: 100%;
 	margin: auto;
+	overflow:hidden;
+}
+
+
+.restart{
+	top:100%;
+	position: relative;
+	opacity: 0;
+}
+
+.montrer{
+	top:5%;
+	left:45%;
+	opacity: 1;
+}
+
+.lever {
+	position: relative;
+	left: 50%;
+    margin-top: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+	opacity: 1;
+}
+
+.cacher{
+	top:100%;
+	opacity: 0;
 }
 
 #m1{
+	position: relative;
+	top: 95%;
 	width: 40%;
 	height: 45%;
 }
 
 #m2{
+	position: relative;
+	top: 95%;
 	width: 45%;
 	height: 50%;
 }
 
 #m3{
+	position: relative;
+	top: 95%;
 	width: 50%;
 	height: 55%;
 }
 
 #m4{
+	position: relative;
+	top: 95%;
 	width: 50%;
 	height: 60%;
 }
 
 #m5{
+	position: relative;
+	top: 95%;
 	width: 50%;
 	height: 65%;
 }
 
 #m6{
+	position: relative;
+	top: 95%;
 	width: 50%;
 	height: 70%;
 }
 
+.monter{
+	animation-name:monter;
+	animation-duration:2s;
+	animation-iteration-count:1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes monter{
+	from{
+		top:95%;
+	}
+	to{
+		top:30%;
+	}
+}
