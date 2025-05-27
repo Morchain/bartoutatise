@@ -15,6 +15,13 @@
     top: 40%;
 }
 
+@media screen and (max-width: 800px) {
+    .boite1 {
+        top:15%;
+		right: 35%;
+    }
+}
+
 .boite2{ 
 	border:thick solid;
     position:absolute ;
@@ -24,6 +31,13 @@
     top: 40%;
 }
 
+@media screen and (max-width: 800px) {
+    .boite2 {
+        top:40%;
+		right: 35%;
+    }
+}
+
 .boite3{ 
 	border:thick solid;
     position:absolute ;
@@ -31,6 +45,13 @@
 	height:135px;
     right: 18%;
     top: 40%;
+}
+
+@media screen and (max-width: 800px) {
+    .boite3 {
+        top:65%;
+		right: 35%;
+    }
 }
 
 .image{
