@@ -68,11 +68,19 @@
     /* === Carte === */
     #map{flex:1;width:100%;height:calc(100vh - 190px);border-top:3px solid var(--ink);box-shadow:inset 0 6px 0 -4px var(--ink)}
 
-    @media(max-width:640px){
-      #controls{flex-direction:column;gap:.45rem}
-      #controls::after{left:50%;transform:translateX(-50%)}
-      select,button,input[type=number]{width:100%}
-      #map{height:calc(100vh - 280px)}
+    @media (max-width: 500px) {
+      #controls {
+        flex-direction: row;
+        gap: 0.4rem;
+        padding: 0.45rem 0.5rem;
+        border-width: 2px;
+        top: 1.25rem; /* on descend légèrement */
+      }
+      #controls label { display: none; }
+      select { flex: 1 1 48%; min-width: 140px; font-size: 0.75rem; padding: 0.4rem 0.6rem; border-width: 2px; }
+      input[type="number"] { flex: 1 1 28%; min-width: 90px; font-size: 0.75rem; padding: 0.4rem 0.6rem; border-width: 2px; }
+      .btn-start, .btn-reset { flex: 1 1 34%; font-size: 0.75rem; padding: 0.4rem 0.6rem; border-width: 2px; }
+      #map { height: calc(100dvh - 250px); }
     }
   </style>
 </head>
@@ -91,7 +99,6 @@
     <label>Fond :</label>
     <select id="mapTheme" onchange="changeMapTheme()">
       <option value="osm">Standard</option>
-      <option value="watercolor">BD</option>
       <option value="light">Clair</option>
       <option value="dark">Sombre</option>
     </select>
@@ -127,9 +134,22 @@
       dark:L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{maxZoom:19})
     };
 
+    watercolor: L.tileLayer(
+  "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+  {
+    maxZoom: 18,
+    subdomains: "abcd",
+    crossOrigin: "",                // ← évite les erreurs CORS
+    attribution:
+      'Map tiles © <a href="https://stamen.com">Stamen Design</a> ' +
+      '(<a href="https://creativecommons.org/licenses/by/3.0">CC-BY 3.0</a>), ' +
+      'Data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+  }
+);
+
     /* Icônes */
     const barIcon =  L.icon({iconUrl:"../leaflet/dist/images/marker-icon.png",iconSize:[32,32],iconAnchor:[16,32]});
-    const heroIcon = L.icon({iconUrl:"../leaflet/dist/images/Design sans titre (10).png",iconSize:[32,32],iconAnchor:[16,32]});
+    const heroIcon = L.icon({iconUrl:"../leaflet/dist/images/Design sans titre (12).png",iconSize:[80,80],iconAnchor:[30,42]});
 
     /* Init */
     navigator.geolocation.getCurrentPosition(
@@ -193,12 +213,17 @@
         });
       }).catch(()=>alert("Itinéraire indisponible"));
     }
+    const resetIcon = L.icon({
+  iconUrl: "../leaflet/dist/images/Design sans titre (10).png", // choisis une image différente
+  iconSize:  [32, 32],
+  iconAnchor:[16, 32]
+});
 
     /* Reset */
     function resetMap(){
       clearAll();
       fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=2500&lon=${userPos[1]}&lat=${userPos[0]}&kinds=bars&limit=200&apikey=${OPENTRIPMAP_KEY}`)
-      .then(r=>r.json()).then(d=>{if(!d.features)return;d.features.forEach(b=>{const[lon,lat]=b.geometry.coordinates;barMarkers.push(L.marker([lat,lon],{icon:heroIcon}).addTo(map).bindPopup(b.properties.name||"Bar"));});});
+      .then(r=>r.json()).then(d=>{if(!d.features)return;d.features.forEach(b=>{const[lon,lat]=b.geometry.coordinates;barMarkers.push(L.marker([lat,lon],{icon:resetIcon}).addTo(map).bindPopup(b.properties.name||"Bar"));});});
     }
 
     function clearAll(){
