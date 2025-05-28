@@ -64,6 +64,7 @@ if (isset($_POST['save_profile'])) {
       <div id="affichage-profil">
         <div class="infos">
           <h2>Nom : <?php echo htmlspecialchars($_SESSION['Pseudo']); ?></h2>
+          <p> <strong>Id :</strong> <?php echo htmlspecialchars($_SESSION['Id']) ?> </p>
           <p><strong>Tribu :</strong> <?php echo htmlspecialchars($_SESSION['tribu'] ); ?></p> 
           <p><strong>Force spéciale :</strong> <?php echo htmlspecialchars($_SESSION['force'] ); ?></p>  
           <p><strong>Compagnon :</strong> <?php echo htmlspecialchars($_SESSION['compagnon'] ); ?></p>
@@ -206,33 +207,7 @@ if (isset($_POST['save_profile'])) {
 
     </section>
 
-    <div class="profil-trophees">
-      <h2>Trophées</h2>
-      <div class="trophees">
-        <div class="trophee">
-          <img src="trophee1.png" alt="Trophée 1" />
-          <p>Trophée 1</p>
-        </div>
-        <div class="trophee">
-          <img src="trophee2.png" alt="Trophée 2" />
-          <p>Trophée 2</p>
-        </div>
-        <div class="trophee trophee-cache">
-          <img src="trophee3.png" alt="Trophée 3" />
-          <p>Trophée 3</p>
-        </div>
-        <div class="trophee trophee-cache">
-          <img src="trophee4.png" alt="Trophée 4" />
-          <p>Trophée 4</p>
-        </div>
-        <div class="trophee trophee-cache">
-          <img src="trophee5.png" alt="Trophée 5" />
-          <p>Trophée 5</p>
-        </div>
-        <button id="voirPlusBtn">Voir plus...</button>
-        <button id="voirMoinsBtn" style="display: none;">Voir moins...</button>
-      </div>
-    </div>
+    
 
     <script>
       const btnModifier = document.getElementById("btnModifier");
