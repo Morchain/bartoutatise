@@ -19,7 +19,7 @@ body {
     border-radius: 5px;
     box-shadow: 1em 2em 2.5em rgb(1, 2, 0.08);
     position: absolute;
-    top: 100%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
