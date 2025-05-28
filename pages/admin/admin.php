@@ -6,7 +6,7 @@
     <title>Administration | Gestion des utilisateurs</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
+<body class="admin-page">
 <?php include '../php/header.php'; ?>
 <?php 
 
@@ -43,30 +43,31 @@
         }
     }
 ?>
-<div class="admin-container">
+<div class="admin-wrapper">
     <h1>Panneau d'administration</h1>
 
-    <section class="search-section">
+    <section class="admin-form">
         <h2>Rechercher un utilisateur</h2>
         <form method="get">
             <input type="text" name="rechercher" placeholder="Pseudo..." value="<?= htmlspecialchars($searchedPseudo) ?>" required>
-            <button type="submit">Rechercher</button>
+            <button type="submit" class="admin-button">Rechercher</button>
         </form>
 
         <?php if ($userData): ?>
-            <div class="user-info">
+            <div class="admin-user-info">
                 <h3><?= htmlspecialchars($userData['Pseudo']) ?> (<?= $userData['Mail'] ?>)</h3>
                 <p>Statut : <strong><?= $userData['Admin'] ? 'Administrateur' : 'Utilisateur' ?></strong></p>
+                <br><br>
+                <a href="?supprimer_user=<?= $userData['Id'] ?>" class="admin-btn admin-delete" onclick="return confirm('Supprimer ce compte et tous ses avis ?')">Supprimer ce compte</a>
 				<br><br>
-                <a href="?supprimer_user=<?= $userData['Id'] ?>" class="btn delete" onclick="return confirm('Supprimer ce compte et tous ses avis ?')">Supprimer ce compte</a>
                 <h4>Ses avis :</h4>
                 <?php if ($userAvis): ?>
-                    <ul>
+                    <ul class="admin-list">
                         <?php foreach ($userAvis as $avis): ?>
                             <li>
                                 <strong><?= htmlspecialchars($avis['Nom_bar']) ?> :</strong> <?= htmlspecialchars($avis['avis']) ?>
-								<br><br>
-                                <a class="btn small delete" href="?rechercher=<?= urlencode($userData['Pseudo']) ?>&supprimer_avis=<?= $avis['Id_avis'] ?>" onclick="return confirm('Supprimer cet avis ?')">Supprimer</a>
+                                <br><br>
+                                <a class="admin-btn admin-small admin-delete" href="?rechercher=<?= urlencode($userData['Pseudo']) ?>&supprimer_avis=<?= $avis['Id_avis'] ?>" onclick="return confirm('Supprimer cet avis ?')">Supprimer</a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -79,9 +80,9 @@
         <?php endif; ?>
     </section>
 
-    <section class="all-users">
+    <section class="admin-all-users">
         <h2>Liste des utilisateurs</h2>
-        <table>
+        <table class="admin-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -104,7 +105,7 @@
                             <a href="modifier.php?identifiant=<?= $u['Id'] ?>&admin=<?= $u['Admin'] ? 'oui' : 'non' ?>">
                                 <?= $u['Admin'] ? 'Retirer Admin' : 'Passer Admin' ?>
                             </a> |
-                            <a href="supprimer.php?identifiant=<?= $u['Id'] ?>&type=user" class="delete">Supprimer</a>
+                            <a href="supprimer.php?identifiant=<?= $u['Id'] ?>&type=user" class="admin-delete">Supprimer</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -113,4 +114,4 @@
     </section>
 </div>
 </body>
-</html>""
+</html>

@@ -1,4 +1,4 @@
-body {
+body.admin-page {
     margin: 0;
     padding-top: 80px;
     background-image: url(../img/backamix.jpg);
@@ -15,7 +15,7 @@ body {
     gap: 40px;
 }
 
-.admin-container {
+.admin-wrapper {
     width: 90%;
     max-width: 1100px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -25,18 +25,21 @@ body {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3, h4 {
+.admin-wrapper h1,
+.admin-wrapper h2,
+.admin-wrapper h3,
+.admin-wrapper h4 {
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 2px #000;
 }
 
-form {
+.admin-form {
     text-align: center;
     margin: 20px 0;
 }
 
-input[type="text"] {
+.admin-form input[type="text"] {
     padding: 10px;
     border-radius: 6px;
     border: none;
@@ -44,7 +47,7 @@ input[type="text"] {
     width: 200px;
 }
 
-button, .btn {
+.admin-button, .admin-btn {
     padding: 10px 20px;
     margin-left: 10px;
     border: none;
@@ -55,44 +58,45 @@ button, .btn {
     cursor: pointer;
 }
 
-button:hover, .btn:hover {
+.admin-button:hover, .admin-btn:hover {
     background-color: #e76f51;
 }
 
-.delete {
+.admin-delete {
     background-color: #e63946;
 }
 
-.delete:hover {
+.admin-delete:hover {
     background-color: #b71c1c;
 }
 
-ul {
+.admin-list ul {
     list-style: none;
     padding: 0;
     margin-top: 20px;
 }
 
-li {
+.admin-list li {
     background-color: rgba(255, 255, 255, 0.1);
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 6px;
+    list-style-type: none;
 }
 
-.small {
+.admin-small {
     font-size: 0.8em;
     padding: 5px 10px;
 }
 
-.user-info {
+.admin-user-info {
     margin-top: 30px;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 10px;
 }
 
-table {
+.admin-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 30px;
@@ -102,26 +106,26 @@ table {
     overflow: hidden;
 }
 
-table th, table td {
+.admin-table th, .admin-table td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
-table th {
+.admin-table th {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
-    .admin-container {
+    .admin-wrapper {
         padding: 20px;
     }
-    input[type="text"] {
+    .admin-form input[type="text"] {
         width: 100%;
         margin-bottom: 10px;
     }
-    button {
+    .admin-button {
         width: 100%;
         margin-left: 0;
     }
