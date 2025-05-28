@@ -49,9 +49,10 @@
     .navbar .menu-hamburger {
         width: 60px;       /* ✅ taille fixe */
         height: 60px;      /* ✅ hauteur fixée */
-        top: 20px;
+        top: 40px;
         left: 0.1px;
       }
+      
 }
   
   .navbar {
