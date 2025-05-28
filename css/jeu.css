@@ -5,7 +5,13 @@
 	height: 95%;
 	margin: auto;
 }
-
+body { 
+    margin: 0; 
+    font-family: sans-serif; 
+    background-image: url(../img/map/carte.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 .boite1{ 
 	border:thick solid;
     position:absolute ;

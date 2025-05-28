@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Machine à sous Astérix</title>
   <?php include 'header.php'; ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/sanglier.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -64,6 +66,17 @@
   </style>
 </head>
 <body>
+<br>
+  <br>
+
+  <br>
+  <br>
+  <br><br>
+  <br>
+
+  <br>
+  <br>
+  <br>
 
   <h1>⚔️ Machine à sous Astérix 🛡️</h1>
 

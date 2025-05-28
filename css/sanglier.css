@@ -1,0 +1,7 @@
+body { 
+    margin: 0; 
+    font-family: sans-serif; 
+    background-image: url(../img/map/carte.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}

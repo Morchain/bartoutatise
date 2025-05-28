@@ -26,32 +26,32 @@
                 switch ($a){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }
@@ -59,32 +59,32 @@
                 switch ($b){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }
@@ -92,32 +92,32 @@
                 switch ($c){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }
@@ -125,32 +125,32 @@
                 switch ($d){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }
@@ -158,32 +158,32 @@
                 switch ($e){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }
@@ -191,32 +191,32 @@
                 switch ($f){
                     case 1:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m1">
+                        <img src="../../img/menhir.png" id="m1">
                             <?php
                         break;
                     case 2:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m2">
+                        <img src="../../img/menhir.png" id="m2">
                             <?php
                         break;
                     case 3:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m3">
+                        <img src="../../img/menhir.png" id="m3">
                             <?php
                         break;
                     case 4:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m4">
+                        <img src="../../img/menhir.png" id="m4">
                             <?php
                         break;
                     case 5:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m5">
+                        <img src="../../img/menhir.png" id="m5">
                             <?php
                         break;
                     case 6:
                         ?>
-                        <img src="../../img/menhir.jpg" id="m6">
+                        <img src="../../img/menhir.png" id="m6">
                             <?php
                         break;
                 }

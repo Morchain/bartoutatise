@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Chasse au Sanglier 🐗</title>
   <?php include 'header.php'; ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../css/sanglier.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +14,6 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('https://images.unsplash.com/photo-1508610048659-a06b669e6003?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Arial', sans-serif;
       color: #FFD700;
@@ -80,7 +81,7 @@
   <h1>🐗 Chasse au Sanglier ! 🍗</h1>
 
   <div class="game-info">
-    ⏱️ Temps : <span id="timer">30</span>s | 🎯 Score : <span id="score">0</span>
+    ⏱️ Temps : <span id="timer">20</span>s | 🎯 Score : <span id="score">0</span>
   </div>
 
   <div id="game-area"></div>
@@ -105,7 +106,7 @@
       gameRunning = true;
 
       score = 0;
-      timeLeft = 30;
+      timeLeft = 20;
       difficulty = 1200;
       scoreDisplay.textContent = score;
       timerDisplay.textContent = timeLeft;
